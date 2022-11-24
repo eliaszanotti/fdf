@@ -6,22 +6,11 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 10:13:45 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/24 17:18:45 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/24 18:05:46 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-
-static char	*ft_join_buffer(char *save, char *buffer)
-{
-	char	*new_save;
-
-	new_save = ft_strjoin(save, buffer);
-	if (!new_save)
-		return (free(save), NULL);
-	free(save);
-	return (new_save);
-}
+#include "libft.h"
 
 char	*ft_finish_line(char *save)
 {
@@ -50,7 +39,7 @@ char	*ft_finish_line(char *save)
 	return (line);
 }
 
-static char	*ft_get_new_save(char *save)
+char	*ft_get_new_save(char *save)
 {
 	char	*new_save;
 	int		i;
@@ -72,7 +61,7 @@ static char	*ft_get_new_save(char *save)
 	return (new_save);
 }
 
-static char	*ft_read_buffer(char *save, int fd)
+char	*ft_read_buffer(char *save, int fd)
 {
 	char	*buffer;
 	int		ret;

@@ -6,7 +6,7 @@
 #    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:58:08 by ezanotti          #+#    #+#              #
-#    Updated: 2022/11/24 17:29:21 by ezanotti         ###   ########lyon.fr    #
+#    Updated: 2022/11/24 18:04:50 by ezanotti         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJS	= ${SRCS:.c=.o}
 
 DIR		= srcs/
 NAME	= libft.a
-HEADER	= includes/
+HEADER	= .
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 RM		= rm -rf
@@ -28,7 +28,7 @@ AR		= ar rcs
 
 all :		${NAME}
 
-%.o: %.c	${HEADER}libft.h ${HEADER}get_next_line.h Makefile
+%.o: %.c	libft.h Makefile
 			${CC} ${CFLAGS} -I ${HEADER} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS} 

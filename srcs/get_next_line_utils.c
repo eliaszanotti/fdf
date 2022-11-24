@@ -6,11 +6,11 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 08:50:35 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/24 17:18:52 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/24 18:06:06 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 void	*ft_calloc_gnl(size_t count, size_t size)
 {
@@ -41,4 +41,15 @@ char	*ft_strjoin_gnl(char const *s1, char const *s2)
 		str[i++] = *s2++;
 	str[i] = '\0';
 	return (str);
+}
+
+char	*ft_join_buffer(char *save, char *buffer)
+{
+	char	*new_save;
+
+	new_save = ft_strjoin(save, buffer);
+	if (!new_save)
+		return (free(save), NULL);
+	free(save);
+	return (new_save);
 }
