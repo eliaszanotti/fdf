@@ -6,17 +6,30 @@
 #    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:58:08 by ezanotti          #+#    #+#              #
-#    Updated: 2022/11/24 18:04:50 by ezanotti         ###   ########lyon.fr    #
+#    Updated: 2022/11/25 16:12:21 by ezanotti         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= ${DIR}ft_strlen.c ${DIR}ft_bzero.c ${DIR}ft_strchr.c \
-		  ${DIR}ft_atoi.c ${DIR}ft_calloc.c ${DIR}ft_strdup.c \
-		  ${DIR}ft_substr.c ${DIR}ft_strjoin.c ${DIR}ft_split.c \
-		  ${DIR}ft_itoa.c ${DIR}get_next_line.c ${DIR}ft_strlcpy.c \
-		  ${DIR}get_next_line_utils.c ${DIR}ft_isnl.c
+S_LIB	= ${DIR}ft_isalpha.c ${DIR}ft_isdigit.c ${DIR}ft_isalnum.c \
+		${DIR}ft_isascii.c ${DIR}ft_isprint.c ${DIR}ft_strlen.c \
+		${DIR}ft_memset.c ${DIR}ft_bzero.c ${DIR}ft_memcpy.c \
+		${DIR}ft_memmove.c ${DIR}ft_strlcpy.c ${DIR}ft_strlcat.c \
+		${DIR}ft_toupper.c ${DIR}ft_tolower.c ${DIR}ft_strchr.c \
+		${DIR}ft_strrchr.c ${DIR}ft_strncmp.c ${DIR}ft_memchr.c \
+		${DIR}ft_memcmp.c ${DIR}ft_strnstr.c ${DIR}ft_atoi.c \
+		${DIR}ft_calloc.c ${DIR}ft_strdup.c ${DIR}ft_substr.c \
+		${DIR}ft_strjoin.c ${DIR}ft_strtrim.c ${DIR}ft_split.c \
+		${DIR}ft_itoa.c ${DIR}ft_strmapi.c ${DIR}ft_striteri.c \
+		${DIR}ft_putchar_fd.c ${DIR}ft_putstr_fd.c ${DIR}ft_putendl_fd.c \
+		${DIR}ft_putnbr_fd.c ${DIR}ft_lstnew.c ${DIR}ft_lstadd_front.c \
+		${DIR}ft_lstsize.c ${DIR}ft_lstlast.c ${DIR}ft_lstadd_back.c \
+		${DIR}ft_lstdelone.c ${DIR}ft_lstclear.c ${DIR}ft_lstiter.c \
+		${DIR}ft_lstmap.c
 
-OBJS	= ${SRCS:.c=.o}
+S_GNL	= ${DIR}get_next_line.c ${DIR}get_next_line_utils.c
+
+O_LIB	= ${S_LIB:.c=.o}
+O_GNL	= ${S_GNL:.c=.o}
 
 DIR		= srcs/
 NAME	= libft.a
@@ -31,11 +44,11 @@ all :		${NAME}
 %.o: %.c	libft.h Makefile
 			${CC} ${CFLAGS} -I ${HEADER} -c $< -o ${<:.c=.o}
 
-${NAME}:	${OBJS} 
-			${AR} ${NAME} ${OBJS} 
+${NAME}:	${O_LIB} ${O_GNL}
+			${AR} ${NAME} ${O_LIB} ${O_GNL} 
 
 clean :
-			${RM} ${OBJS} 
+			${RM} ${O_LIB} ${O_GNL}
 
 fclean :	clean
 			${RM} ${NAME} 
