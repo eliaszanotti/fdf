@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdint.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10
@@ -46,6 +47,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 int		ft_isnl(const char *s);
 
 // OTHERS
-char	*ft_parsing(int fd);
+int	*ft_parsing(int fd);
 
 #endif

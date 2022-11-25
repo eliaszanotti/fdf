@@ -23,9 +23,9 @@ char	*ft_finish_line(char *save)
 	while (save[i] && save[i] != '\n')
 		i++;
 	if (save[i] == '\n')
-		line = ft_calloc(i + 2, sizeof(char));
+		line = ft_calloc_gnl(i + 2, sizeof(char));
 	else
-		line = ft_calloc(i + 1, sizeof(char));
+		line = ft_calloc_gnl(i + 1, sizeof(char));
 	if (!line)
 		return (free(save), NULL);
 	i = 0;
@@ -50,7 +50,7 @@ char	*ft_get_new_save(char *save)
 		i++;
 	if (!save[i])
 		return (free(save), NULL);
-	new_save = ft_calloc(ft_strlen(save) - i + 1, sizeof(char));
+	new_save = ft_calloc_gnl(ft_strlen(save) - i + 1, sizeof(char));
 	if (!new_save)
 		return (free(save), NULL);
 	i++;
@@ -66,7 +66,7 @@ char	*ft_read_buffer(char *save, int fd)
 	char	*buffer;
 	int		ret;
 
-	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	buffer = ft_calloc_gnl(BUFFER_SIZE + 1, sizeof(char));
 	if (!buffer)
 		return (free(save), NULL);
 	ret = 1;
@@ -100,7 +100,7 @@ char	*get_next_line(int fd)
 	}
 	if (!save[fd])
 	{
-		save[fd] = ft_calloc(1, sizeof(char));
+		save[fd] = ft_calloc_gnl(1, sizeof(char));
 		if (!save[fd])
 			return (NULL);
 	}

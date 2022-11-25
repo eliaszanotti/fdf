@@ -47,7 +47,7 @@ char	*ft_join_buffer(char *save, char *buffer)
 {
 	char	*new_save;
 
-	new_save = ft_strjoin(save, buffer);
+	new_save = ft_strjoin_gnl(save, buffer);
 	if (!new_save)
 		return (free(save), NULL);
 	free(save);
