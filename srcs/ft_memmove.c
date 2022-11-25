@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 17:06:42 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/16 13:38:18 by ezanotti         ###   ########lyon.fr   */
+/*   Created: 2022/11/07 20:48:28 by ezanotti          #+#    #+#             */
+/*   Updated: 2022/11/14 10:48:48 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	total;
-	void	*new_s;
+	const char	*copy_src;
+	char		*copy_dest;
 
-	total = count * size;
-	if (!count || !size)
-		return (malloc(0));
-	if (SIZE_MAX / size < count)
+	if (!dest && !src)
 		return (0);
-	new_s = malloc(total);
-	if (!new_s)
-		return (0);
-	ft_memset(new_s, 0, total);
-	return (new_s);
+	copy_src = src;
+	copy_dest = dest;
+	if (copy_src > copy_dest && copy_src < copy_dest + n)
+		ft_memcpy(copy_dest, copy_src, n);
+	else
+	{
+		while (n--)
+			copy_dest[n] = copy_src[n];
+	}		
+	return (dest);
 }

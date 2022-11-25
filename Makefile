@@ -6,7 +6,7 @@
 #    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:58:08 by ezanotti          #+#    #+#              #
-#    Updated: 2022/11/25 16:12:21 by ezanotti         ###   ########lyon.fr    #
+#    Updated: 2022/11/25 16:44:51 by ezanotti         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ S_LIB	= ${DIR}ft_isalpha.c ${DIR}ft_isdigit.c ${DIR}ft_isalnum.c \
 		${DIR}ft_lstdelone.c ${DIR}ft_lstclear.c ${DIR}ft_lstiter.c \
 		${DIR}ft_lstmap.c
 
-S_GNL	= ${DIR}get_next_line.c ${DIR}get_next_line_utils.c
+S_GNL	= ${DIR}get_next_line.c ${DIR}get_next_line_utils.c ${DIR}ft_isnl.c
 
 O_LIB	= ${S_LIB:.c=.o}
 O_GNL	= ${S_GNL:.c=.o}

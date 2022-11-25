@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 17:06:42 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/16 13:38:18 by ezanotti         ###   ########lyon.fr   */
+/*   Created: 2022/11/07 15:24:07 by ezanotti          #+#    #+#             */
+/*   Updated: 2022/11/07 19:05:19 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	size_t	total;
-	void	*new_s;
+	char	*str;
+	size_t	i;
 
-	total = count * size;
-	if (!count || !size)
-		return (malloc(0));
-	if (SIZE_MAX / size < count)
-		return (0);
-	new_s = malloc(total);
-	if (!new_s)
-		return (0);
-	ft_memset(new_s, 0, total);
-	return (new_s);
+	str = s;
+	i = 0;
+	while (i < n)
+		str[i++] = c;
+	return (s);
 }

@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 15:10:37 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/24 17:12:05 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/14 11:01:08 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_bzero(void *s, size_t n)
 	char	*str;
 	size_t	i;
 
-	str = (char *)s;
+	str = s;
 	i = 0;
 	while (i < n)
 		str[i++] = '\0';

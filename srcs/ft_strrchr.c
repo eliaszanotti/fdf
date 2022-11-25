@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/08 17:06:42 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/16 13:38:18 by ezanotti         ###   ########lyon.fr   */
+/*   Created: 2022/11/08 12:55:13 by ezanotti          #+#    #+#             */
+/*   Updated: 2022/11/09 18:55:31 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t	total;
-	void	*new_s;
+	unsigned char	ch;
+	int				len;
 
-	total = count * size;
-	if (!count || !size)
-		return (malloc(0));
-	if (SIZE_MAX / size < count)
-		return (0);
-	new_s = malloc(total);
-	if (!new_s)
-		return (0);
-	ft_memset(new_s, 0, total);
-	return (new_s);
+	ch = c;
+	len = 0;
+	while (s[len])
+		len++;
+	while (len >= 0)
+	{
+		if (s[len] == ch)
+			return ((char *)(s + len));
+		len--;
+	}
+	return (0);
 }
