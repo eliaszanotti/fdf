@@ -6,7 +6,7 @@
 #    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:58:08 by ezanotti          #+#    #+#              #
-#    Updated: 2022/11/25 16:44:51 by ezanotti         ###   ########lyon.fr    #
+#    Updated: 2022/11/25 19:25:26 by ezanotti         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,8 @@ O_GNL	= ${S_GNL:.c=.o}
 
 DIR		= srcs/
 NAME	= libft.a
-HEADER	= .
+HEADER	= -I . -I mlx/
+MLX		= -L mlx -l mlx -framework OpenGL -framework Appkit 
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 RM		= rm -rf
@@ -42,11 +43,10 @@ AR		= ar rcs
 all :		${NAME}
 
 %.o: %.c	libft.h Makefile
-			${CC} ${CFLAGS} -I ${HEADER} -c $< -o ${<:.c=.o}
+			${CC} ${CFLAGS} ${HEADER} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${O_LIB} ${O_GNL}
-			${AR} ${NAME} ${O_LIB} ${O_GNL} 
-
+			${AR} ${MLX} ${NAME} ${O_LIB} ${O_GNL} 
 clean :
 			${RM} ${O_LIB} ${O_GNL}
 
