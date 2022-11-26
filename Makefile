@@ -6,7 +6,7 @@
 #    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:58:08 by ezanotti          #+#    #+#              #
-#    Updated: 2022/11/25 19:25:26 by ezanotti         ###   ########lyon.fr    #
+#    Updated: 2022/11/26 10:39:09 by ezanotti         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,27 +28,30 @@ S_LIB	= ${DIR}ft_isalpha.c ${DIR}ft_isdigit.c ${DIR}ft_isalnum.c \
 
 S_GNL	= ${DIR}get_next_line.c ${DIR}get_next_line_utils.c ${DIR}ft_isnl.c
 
+S_FDF	= main.c ft_parsing.c
+
 O_LIB	= ${S_LIB:.c=.o}
 O_GNL	= ${S_GNL:.c=.o}
+O_FDF	= ${S_FDF:.c=.o}
 
+OBJS	= ${O_LIB} ${O_GNL} ${O_FDF}
+
+NAME	= fdf
 DIR		= srcs/
-NAME	= libft.a
-HEADER	= -I . -I mlx/
-MLX		= -L mlx -l mlx -framework OpenGL -framework Appkit 
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 RM		= rm -rf
-AR		= ar rcs
 
 all :		${NAME}
 
 %.o: %.c	libft.h Makefile
-			${CC} ${CFLAGS} ${HEADER} -c $< -o ${<:.c=.o}
+			${CC} ${CFLAGS} -I . -c $< -o ${<:.c=.o} 
 
-${NAME}:	${O_LIB} ${O_GNL}
-			${AR} ${MLX} ${NAME} ${O_LIB} ${O_GNL} 
+${NAME}:	${OBJS}
+			${CC} ${OBJS} -o ${NAME} 
+
 clean :
-			${RM} ${O_LIB} ${O_GNL}
+			${RM} ${OBJS}
 
 fclean :	clean
 			${RM} ${NAME} 
