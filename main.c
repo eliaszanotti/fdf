@@ -6,11 +6,12 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 17:51:29 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/26 09:53:40 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/26 10:51:35 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "mlx.h"
 
 #include <stdio.h>
 #include <fcntl.h>
@@ -27,7 +28,6 @@ void put(int *tab)
 
 int main()
 {
-
 
 
 	int fd = open("test", O_RDONLY);

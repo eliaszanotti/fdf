@@ -6,10 +6,11 @@
 #    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:58:08 by ezanotti          #+#    #+#              #
-#    Updated: 2022/11/26 10:39:09 by ezanotti         ###   ########lyon.fr    #
+#    Updated: 2022/11/26 10:51:24 by ezanotti         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
+# SOURCES
 S_LIB	= ${DIR}ft_isalpha.c ${DIR}ft_isdigit.c ${DIR}ft_isalnum.c \
 		${DIR}ft_isascii.c ${DIR}ft_isprint.c ${DIR}ft_strlen.c \
 		${DIR}ft_memset.c ${DIR}ft_bzero.c ${DIR}ft_memcpy.c \
@@ -36,19 +37,24 @@ O_FDF	= ${S_FDF:.c=.o}
 
 OBJS	= ${O_LIB} ${O_GNL} ${O_FDF}
 
+# VARIABLES
 NAME	= fdf
 DIR		= srcs/
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 RM		= rm -rf
 
+# MLX
+MLX		= -framework OpenGL -framework AppKit
+
+# COMPILATION
 all :		${NAME}
 
 %.o: %.c	libft.h Makefile
-			${CC} ${CFLAGS} -I . -c $< -o ${<:.c=.o} 
+			${CC} ${CFLAGS} -I . -I ./mlx -c $< -o ${<:.c=.o} 
 
 ${NAME}:	${OBJS}
-			${CC} ${OBJS} -o ${NAME} 
+			${CC} -L./srcs ${OBJS} -o ${NAME} ${MLX}
 
 clean :
 			${RM} ${OBJS}
