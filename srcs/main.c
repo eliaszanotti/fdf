@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:00:59 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/28 13:44:41 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/28 15:15:11 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,11 @@ int main()
 	void	*mlx_win;*/
 
 	int fd = open("test", O_RDONLY);
-	int **tab = ft_parsing(fd);
-	
-	ft_display_grid(tab);
+	int lines = 0;
+	int cols = 0;
+
+	int **tab = ft_parsing(fd, &lines, &cols);
+	printf("%d", lines);
+	tab = NULL;
+	/*ft_display_grid(tab);*/
 }
