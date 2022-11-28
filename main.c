@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 17:51:29 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/26 10:51:35 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/28 10:54:29 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,15 @@ void put(int *tab)
 	printf("\n");
 }
 
-
 int main()
 {
+	void	*mlx;
+	void	*mlx_win;
+
+	mlx = mlx_init();
+	mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
+	mlx_loop(mlx);
+
 
 
 	int fd = open("test", O_RDONLY);
@@ -37,6 +43,7 @@ int main()
 	while (new_tab[i])
 	{
 		put(new_tab[i]);
+		free(new_tab[i]);
 		i++;
 	}
 	free(new_tab);
