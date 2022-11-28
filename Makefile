@@ -6,7 +6,7 @@
 #    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:58:08 by ezanotti          #+#    #+#              #
-#    Updated: 2022/11/28 10:58:08 by ezanotti         ###   ########lyon.fr    #
+#    Updated: 2022/11/28 11:52:06 by ezanotti         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ OBJS	= ${O_LIB} ${O_GNL} ${O_FDF}
 NAME	= fdf
 DIR		= srcs/
 CC		= cc
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -g3
 RM		= rm -rf
 
 # MLX
