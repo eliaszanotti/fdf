@@ -6,7 +6,7 @@
 #    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:58:08 by ezanotti          #+#    #+#              #
-#    Updated: 2022/11/28 13:05:53 by ezanotti         ###   ########lyon.fr    #
+#    Updated: 2022/11/28 13:10:04 by ezanotti         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,8 +51,8 @@ MLX		= -framework OpenGL -framework AppKit -Lmlx -lmlx
 # COMPILATION
 all :		${NAME}
 
-%.o: %.c	libft.h Makefile
-			${CC} ${CFLAGS} -I . -I mlx -c $< -o ${<:.c=.o} 
+%.o: %.c	${DIR}libft.h Makefile
+			${CC} ${CFLAGS} -I ${DIR} -I mlx -I ${DIR_SRC} -c $< -o ${<:.c=.o} 
 
 ${NAME}:	${OBJS}
 			${CC} ${OBJS} -o ${NAME} ${MLX}

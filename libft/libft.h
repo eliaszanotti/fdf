@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:37:49 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/28 12:58:46 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/28 13:07:53 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ char	*get_next_line(int fd);
 void	*ft_calloc_gnl(size_t count, size_t size);
 char	*ft_strjoin_gnl(char const *s1, char const *s2);
 char	*ft_join_buffer(char *save, char *buffer);
+int		ft_isnl(const char *s);
 
 // LIBFT
 int		ft_isalpha(int c);
@@ -83,9 +84,6 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-
-// UTILS
-int		ft_isnl(const char *s);
 
 // OTHERS
 typedef struct	s_vars {
