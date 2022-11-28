@@ -6,7 +6,7 @@
 #    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:58:08 by ezanotti          #+#    #+#              #
-#    Updated: 2022/11/28 13:10:04 by ezanotti         ###   ########lyon.fr    #
+#    Updated: 2022/11/28 14:07:04 by ezanotti         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,8 @@ S_LIB	= ${DIR}ft_isalpha.c ${DIR}ft_isdigit.c ${DIR}ft_isalnum.c \
 
 S_GNL	= ${DIR}get_next_line.c ${DIR}get_next_line_utils.c ${DIR}ft_isnl.c
 
-S_FDF	= ${DIR_SRC}main.c ${DIR_SRC}ft_parsing.c
+S_FDF	= ${DIR_SRC}main.c ${DIR_SRC}ft_parsing.c ${DIR_SRC}ft_display_grid.c \
+		  ${DIR_SRC}ft_print_line.c
 
 O_LIB	= ${S_LIB:.c=.o}
 O_GNL	= ${S_GNL:.c=.o}
@@ -46,7 +47,7 @@ CFLAGS	= -Wall -Wextra -Werror -g3
 RM		= rm -rf
 
 # MLX
-MLX		= -framework OpenGL -framework AppKit -Lmlx -lmlx
+MLX		= -framework OpenGL -framework AppKit -Lmlx -lmlx -lm
 
 # COMPILATION
 all :		${NAME}
