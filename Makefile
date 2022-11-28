@@ -6,7 +6,7 @@
 #    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:58:08 by ezanotti          #+#    #+#              #
-#    Updated: 2022/11/26 10:51:24 by ezanotti         ###   ########lyon.fr    #
+#    Updated: 2022/11/28 10:58:08 by ezanotti         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,16 +45,16 @@ CFLAGS	= -Wall -Wextra -Werror
 RM		= rm -rf
 
 # MLX
-MLX		= -framework OpenGL -framework AppKit
+MLX		= -framework OpenGL -framework AppKit -Lmlx -lmlx
 
 # COMPILATION
 all :		${NAME}
 
 %.o: %.c	libft.h Makefile
-			${CC} ${CFLAGS} -I . -I ./mlx -c $< -o ${<:.c=.o} 
+			${CC} ${CFLAGS} -I . -I mlx -c $< -o ${<:.c=.o} 
 
 ${NAME}:	${OBJS}
-			${CC} -L./srcs ${OBJS} -o ${NAME} ${MLX}
+			${CC} ${OBJS} -o ${NAME} ${MLX}
 
 clean :
 			${RM} ${OBJS}

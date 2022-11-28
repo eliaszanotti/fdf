@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 16:00:27 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/25 18:42:00 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/28 10:21:03 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ int	**ft_get_int_tab(t_list *first)
 	}
 	while (first)
 	{
-		free(first->content);
 		first = first->next;
+		free(first->content);
 	}
 	free(first);
 	return (int_tab);
@@ -60,17 +60,14 @@ int	**ft_parsing(int fd)
 	int		*int_tab;
 
 	first = NULL;
-	line = ft_calloc(1, sizeof(char));
-	while (1)
+	line = get_next_line(fd);
+	while (line)
 	{
-		line = get_next_line(fd);
-		if (!line)
-			break ;
 		int_tab = ft_get_atoi_tab(ft_split(line, ' '));
 		free(line);
 		new = ft_lstnew(int_tab);
 		ft_lstadd_back(&first, new);
+		line = get_next_line(fd);
 	}
-	free(new);
 	return (ft_get_int_tab(first));
 }
