@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:00:59 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/28 15:15:11 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/28 15:38:55 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ int main()
 
 	int **tab = ft_parsing(fd, &lines, &cols);
 	printf("%d", lines);
-	tab = NULL;
-	/*ft_display_grid(tab);*/
+	printf("%d", cols);
+	ft_display_grid(tab, lines, cols);
 }
