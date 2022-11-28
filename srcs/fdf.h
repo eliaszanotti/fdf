@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:07:28 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/28 15:36:35 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/28 17:41:09 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ typedef struct s_vars
 {
 	void	*mlx;
 	void	*win;
+	int		*lines;
+	int		*cols;
 }	t_vars;
 
 typedef struct s_line
@@ -32,7 +34,7 @@ typedef struct s_line
 }	t_line;
 
 int		**ft_parsing(int fd, int *lines, int *cols);
-void	ft_display_grid(int **tab, int lines, int cols);
+void	ft_display_grid(int **tab, t_vars window);
 void	ft_print_line(t_vars window, t_line line);
 
 #endif

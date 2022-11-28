@@ -6,11 +6,13 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 16:00:27 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/28 15:20:52 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/28 17:47:46 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+#include <stdio.h>
 
 int	*ft_get_atoi_tab(char **tab, int *cols)
 {
