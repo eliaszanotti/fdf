@@ -6,39 +6,25 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:00:59 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/28 13:44:41 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/28 18:03:40 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-#include <stdio.h>
-
-void put(int *tab)
+int	main(void)
 {
-	int i = 0;
+	t_vars	window;
+	int		lines;
+	int		cols;
+	int		fd;
+	int		**tab;
 
-	while (i < 4)
-		printf("[%d]", tab[i++]);
-	printf("\n");
-}
-
-int main()
-{
-	/*int fd = open("test", O_RDONLY);
-	int **new_tab = ft_parsing(fd);
-	int i = 0;
-	while (i < 4)
-	{
-		put(new_tab[i]);
-		i++;
-	}
-
-	void	*mlx;
-	void	*mlx_win;*/
-
-	int fd = open("test", O_RDONLY);
-	int **tab = ft_parsing(fd);
-	
-	ft_display_grid(tab);
+	lines = 0;
+	cols = 0;
+	fd = open("test", O_RDONLY);
+	tab = ft_parsing(fd, &lines, &cols);
+	window.lines = lines;
+	window.cols = cols;
+	ft_display_grid(tab, window);
 }

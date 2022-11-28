@@ -6,13 +6,15 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 16:00:27 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/28 13:13:06 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/28 17:47:46 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	*ft_get_atoi_tab(char **tab)
+#include <stdio.h>
+
+int	*ft_get_atoi_tab(char **tab, int *cols)
 {
 	int		*int_tab;
 	ssize_t	i;
@@ -20,6 +22,7 @@ int	*ft_get_atoi_tab(char **tab)
 	i = 0;
 	while (tab[i])
 		i++;
+	*cols = i;
 	int_tab = ft_calloc(i + 1, sizeof(int));
 	if (!int_tab)
 		return (free(tab), NULL);
@@ -52,7 +55,7 @@ int	**ft_get_int_tab(t_list *first)
 	return (int_tab);
 }
 
-int	**ft_parsing(int fd)
+int	**ft_parsing(int fd, int *lines, int *cols)
 {
 	t_list	*first;
 	t_list	*new;
@@ -63,7 +66,8 @@ int	**ft_parsing(int fd)
 	line = get_next_line(fd);
 	while (line)
 	{
-		int_tab = ft_get_atoi_tab(ft_split(line, ' '));
+		*lines += 1;
+		int_tab = ft_get_atoi_tab(ft_split(line, ' '), cols);
 		free(line);
 		new = ft_lstnew(int_tab);
 		ft_lstadd_back(&first, new);
