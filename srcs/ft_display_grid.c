@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:39:10 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/28 14:57:19 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/28 15:17:12 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_display_grid(int **tab)
 			line.x2 = line.x2 - 100;
 			ft_print_line(window, line);
 			printf("%d", tab[i][j]);
-			//mlx_string_put(window.mlx, window.win, line.x1, line.y1, 0255000000, ft_itoa(tab[i][j] * 1000));
+			mlx_string_put(window.mlx, window.win, line.x1, line.y1, 0255000000, ft_itoa(tab[i][j] * 1000));
 			j++;
 		}
 		i++;
