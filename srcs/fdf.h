@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:07:28 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/28 17:41:09 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/28 17:59:26 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ typedef struct s_vars
 {
 	void	*mlx;
 	void	*win;
-	int		*lines;
-	int		*cols;
+	int		lines;
+	int		cols;
 }	t_vars;
 
 typedef struct s_line
