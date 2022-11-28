@@ -6,7 +6,7 @@
 #    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:58:08 by ezanotti          #+#    #+#              #
-#    Updated: 2022/11/28 11:52:06 by ezanotti         ###   ########lyon.fr    #
+#    Updated: 2022/11/28 13:05:53 by ezanotti         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ S_LIB	= ${DIR}ft_isalpha.c ${DIR}ft_isdigit.c ${DIR}ft_isalnum.c \
 
 S_GNL	= ${DIR}get_next_line.c ${DIR}get_next_line_utils.c ${DIR}ft_isnl.c
 
-S_FDF	= main.c ft_parsing.c
+S_FDF	= ${DIR_SRC}main.c ${DIR_SRC}ft_parsing.c
 
 O_LIB	= ${S_LIB:.c=.o}
 O_GNL	= ${S_GNL:.c=.o}
@@ -39,7 +39,8 @@ OBJS	= ${O_LIB} ${O_GNL} ${O_FDF}
 
 # VARIABLES
 NAME	= fdf
-DIR		= srcs/
+DIR		= libft/
+DIR_SRC = srcs/
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror -g3
 RM		= rm -rf

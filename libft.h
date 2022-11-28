@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:37:49 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/25 18:22:14 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/28 12:58:46 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,11 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int		ft_isnl(const char *s);
 
 // OTHERS
+typedef struct	s_vars {
+	void	*mlx;
+	void	*win;
+}	t_vars;
+
 int		**ft_parsing(int fd);
 
 #endif
