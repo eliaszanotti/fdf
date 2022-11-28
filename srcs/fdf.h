@@ -6,14 +6,15 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:07:28 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/28 13:08:52 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/28 13:15:49 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
-# define FDF_h
+# define FDF_H
 
 # include "libft.h"
+# include "mlx.h"
 
 typedef struct	s_vars {
 	void	*mlx;

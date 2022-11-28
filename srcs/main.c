@@ -6,15 +6,13 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:00:59 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/28 13:01:02 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/28 13:19:22 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "mlx.h"
+#include "fdf.h"
 
 #include <stdio.h>
-#include <fcntl.h>
 
 void put(int *tab)
 {

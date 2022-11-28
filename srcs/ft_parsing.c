@@ -6,11 +6,11 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 16:00:27 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/28 10:21:03 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/28 13:13:06 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "fdf.h"
 
 int	*ft_get_atoi_tab(char **tab)
 {
