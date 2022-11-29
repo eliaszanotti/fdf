@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 16:00:27 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/28 17:47:46 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/29 11:26:35 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include <stdio.h>
 
-int	*ft_get_atoi_tab(char **tab, int *cols)
+int	*ft_get_atoi_tab(char **tab, t_grid *grid)
 {
 	int		*int_tab;
 	ssize_t	i;
@@ -22,7 +22,7 @@ int	*ft_get_atoi_tab(char **tab, int *cols)
 	i = 0;
 	while (tab[i])
 		i++;
-	*cols = i;
+	grid->cols = i;
 	int_tab = ft_calloc(i + 1, sizeof(int));
 	if (!int_tab)
 		return (free(tab), NULL);
@@ -55,7 +55,7 @@ int	**ft_get_int_tab(t_list *first)
 	return (int_tab);
 }
 
-int	**ft_parsing(int fd, int *lines, int *cols)
+int	**ft_parsing(int fd, t_grid *grid)
 {
 	t_list	*first;
 	t_list	*new;
@@ -64,10 +64,12 @@ int	**ft_parsing(int fd, int *lines, int *cols)
 
 	first = NULL;
 	line = get_next_line(fd);
+	grid->lines = 0;
+	grid->cols = 0;
 	while (line)
 	{
-		*lines += 1;
-		int_tab = ft_get_atoi_tab(ft_split(line, ' '), cols);
+		grid->lines += 1;
+		int_tab = ft_get_atoi_tab(ft_split(line, ' '), grid);
 		free(line);
 		new = ft_lstnew(int_tab);
 		ft_lstadd_back(&first, new);

@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:07:28 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/28 18:51:11 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/29 12:09:16 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,28 +21,27 @@ typedef struct s_vars
 {
 	void	*mlx;
 	void	*win;
-	int		lines;
-	int		cols;
 }	t_vars;
 
-typedef struct s_line
+typedef struct s_grid
 {
+	int	**tab;
+	int	lines;
+	int	cols;
+	int	left;
+	int	top;
+	int	off_left;
+	int	off_top;
 	int	x1;
 	int	y1;
 	int	x2;
 	int	y2;
-}	t_line;
+}	t_grid;
 
-typedef struct s_offset
-{
-	int	left;
-	int	top;
-	int	left_offset;
-	int	top_offset;
-}	t_offset;
-
-int		**ft_parsing(int fd, int *lines, int *cols);
-void	ft_display_grid(int **tab, t_vars window);
-void	ft_print_line(t_vars window, t_line line);
+int		**ft_parsing(int fd, t_grid *grid);
+t_grid	*ft_grid_init(int fd);
+t_vars	*ft_window_init(char *title);
+void	ft_display_grid(t_grid *grid);
+void	ft_print_line(t_vars *window, t_grid *grid);
 
 #endif
