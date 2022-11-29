@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:07:28 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/29 16:15:26 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/29 17:53:40 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 # include "libft.h"
 # include "mlx.h"
 # include <math.h>
-
-# define MAX 3
-# define MIN 2
 
 # ifndef WIN_W
 #  define WIN_W 2570
@@ -31,6 +28,7 @@ typedef struct s_vars
 {
 	void	*mlx;
 	void	*win;
+	void	*image;
 }	t_vars;
 
 typedef struct s_grid
