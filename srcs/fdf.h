@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:07:28 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/29 12:13:00 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/29 16:13:53 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,14 @@
 # include "mlx.h"
 # include <math.h>
 
+# define MAX 3
+# define MIN 2
+
 # ifndef WIN_W
-#  define WIN_W 1920
+#  define WIN_W 2570
 # endif
 # ifndef WIN_H
-#  define WIN_H 1080
+#  define WIN_H 1440
 # endif
 
 typedef struct s_vars
@@ -32,17 +35,20 @@ typedef struct s_vars
 
 typedef struct s_grid
 {
-	int	**tab;
-	int	lines;
-	int	cols;
-	int	left;
-	int	top;
-	int	off_left;
-	int	off_top;
-	int	x1;
-	int	y1;
-	int	x2;
-	int	y2;
+	int		**tab;
+	int		lines;
+	int		cols;
+	int		max;
+	double	rotation;
+	int		min;
+	int		left;
+	int		top;
+	int		off_left;
+	int		off_top;
+	int		x1;
+	int		y1;
+	int		x2;
+	int		y2;
 }	t_grid;
 
 int		**ft_parsing(int fd, t_grid *grid);

@@ -6,14 +6,11 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 11:13:58 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/29 14:34:44 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/29 16:12:50 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fdf.h>
-
-#define MAX 3
-#define MIN 2
 
 t_grid	*ft_grid_init(int fd)
 {
@@ -23,10 +20,13 @@ t_grid	*ft_grid_init(int fd)
 	if (!grid)
 		return (NULL);
 	grid->tab = ft_parsing(fd, grid);
-	grid->left = (grid->lines - 1) * MAX;
-	grid->top = (grid->lines + grid->cols - 2) * MIN;
+	grid->max = round(WIN_W / (grid->lines + grid->cols - 2));
+	grid->rotation = 0.7;
+	grid->min = round(grid->max * grid->rotation);
+	grid->left = (grid->lines - 1) * grid->max;
+	grid->top = (grid->lines + grid->cols - 2) * grid->min;
 	grid->off_left = grid->left + \
-		(WIN_W - ((grid->lines + grid->cols) * MAX)) / 2;
+		(WIN_W - ((grid->lines + grid->cols) * grid->max)) / 2;
 	grid->off_top = (WIN_H - grid->top) / 2;
 	return (grid);
 }
