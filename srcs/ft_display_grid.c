@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:39:10 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/29 12:05:41 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/29 12:11:12 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	ft_place_line(t_vars *window, t_grid *grid, int i, int j)
 {
 	grid->x1 = (j - i) * MAX + grid->off_left;
 	grid->y1 = (i + j) * MIN + grid->off_top;
-	grid->x2 =	grid->x1 + MAX;
-	grid->y2 =	grid->y1 + MIN;
+	grid->x2 = grid->x1 + MAX;
+	grid->y2 = grid->y1 + MIN;
 	if (j != grid->cols - 1)
 		ft_print_line(window, grid);
 	grid->x2 = grid->x2 - (MAX * 2);
