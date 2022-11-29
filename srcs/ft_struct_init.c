@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 11:13:58 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/29 17:53:18 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/29 18:37:24 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ t_vars	*ft_window_init(char *title)
 		return (NULL);
 	window->mlx = mlx_init();
 	window->win = mlx_new_window(window->mlx, WIN_W, WIN_H, title);
-
-	window->image-> = mlx_new_image(window->mlx, WIN_W, WIN_H);
-
+	window->image.img = mlx_new_image(window->mlx, WIN_W, WIN_H);
+	window->image.data = (int *)mlx_get_data_addr(window->image.img, \
+			&window->image.bpp, &window->image.size_l, &window->image.endian);
 	return (window);
 }

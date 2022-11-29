@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:07:28 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/29 17:53:40 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/29 18:20:04 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,20 @@
 #  define WIN_H 1440
 # endif
 
+typedef struct s_img
+{
+	void	*img;
+	int		*data;
+	int		size_l;
+	int		bpp;
+	int		endian;
+}	t_img;
+
 typedef struct s_vars
 {
 	void	*mlx;
 	void	*win;
-	void	*image;
+	t_img	image;
 }	t_vars;
 
 typedef struct s_grid
