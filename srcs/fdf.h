@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:07:28 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/29 18:20:04 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/29 18:55:17 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ typedef struct s_grid
 	int		top;
 	int		off_left;
 	int		off_top;
+	int		color;
 	int		x1;
 	int		y1;
 	int		x2;
