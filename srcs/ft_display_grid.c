@@ -6,12 +6,11 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:39:10 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/29 19:12:33 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/29 19:29:03 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-
 
 int	ft_color(t_grid *grid, int i, int j)
 {
@@ -79,7 +78,5 @@ void	ft_display_grid(t_grid *grid)
 		i++;
 	}
 	mlx_put_image_to_window(window->mlx, window->win, window->image.img, 0, 0);
-	//mlx_destroy_window(mlx, mlx_win);
-	//mlx_destroy_display(mlx);
 	mlx_loop(window->mlx);
 }

@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 14:12:02 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/29 18:54:54 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/29 19:28:43 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	ft_print_line(t_vars *window, t_grid *grid)
 	while (pixels--)
 	{
 		if ((int)pixel_y * WIN_W + (int)pixel_x < WIN_W * WIN_H)
-			window->image.data[(int)pixel_y * WIN_W + (int)pixel_x] = grid->color;
-		//mlx_pixel_put(window->mlx, window->win, pixel_x, pixel_y, 0xFFFFFF);
+			window->image.data[(int)pixel_y * WIN_W + (int)pixel_x] = \
+				grid->color;
 		pixel_x += delta_x;
 		pixel_y += delta_y;
 	}

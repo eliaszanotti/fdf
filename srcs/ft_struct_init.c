@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 11:13:58 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/29 19:05:37 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/29 19:26:02 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ t_grid	*ft_grid_init(int fd)
 		return (NULL);
 	grid->tab = ft_parsing(fd, grid);
 	grid->max = round(((WIN_W + WIN_H) / 2) / (grid->lines + grid->cols - 2));
-	grid->altitude = 0.05;
-	grid->rotation = 0.5;
+	grid->altitude = 0.4;
+	grid->rotation = 0.3;
 	grid->min = round(grid->max * grid->rotation);
 	grid->left = (grid->lines - 1) * grid->max;
 	grid->top = (grid->lines + grid->cols - 2) * grid->min;
