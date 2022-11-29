@@ -6,17 +6,14 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 11:13:58 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/29 12:06:17 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/29 14:34:44 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fdf.h>
 
-#define MAX 30
-#define MIN 20
-
-#define WIN_W 1920
-#define WIN_H 1080
+#define MAX 3
+#define MIN 2
 
 t_grid	*ft_grid_init(int fd)
 {

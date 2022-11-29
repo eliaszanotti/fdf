@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:07:28 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/29 12:09:16 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/29 12:13:00 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@
 # include "libft.h"
 # include "mlx.h"
 # include <math.h>
+
+# ifndef WIN_W
+#  define WIN_W 1920
+# endif
+# ifndef WIN_H
+#  define WIN_H 1080
+# endif
 
 typedef struct s_vars
 {
