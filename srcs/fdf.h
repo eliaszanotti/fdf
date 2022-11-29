@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:07:28 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/29 16:13:53 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/29 16:15:26 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct s_grid
 	int		lines;
 	int		cols;
 	int		max;
+	double	altitude;
 	double	rotation;
 	int		min;
 	int		left;
