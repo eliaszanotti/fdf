@@ -6,7 +6,7 @@
 #    By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/07 17:58:08 by ezanotti          #+#    #+#              #
-#    Updated: 2022/11/30 10:59:31 by ezanotti         ###   ########lyon.fr    #
+#    Updated: 2022/11/30 14:27:59 by ezanotti         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,15 +29,11 @@ S_LIB	= ${DIR}ft_isalpha.c ${DIR}ft_isdigit.c ${DIR}ft_isalnum.c \
 
 S_GNL	= ${DIR}get_next_line.c ${DIR}get_next_line_utils.c ${DIR}ft_isnl.c
 
-S_FDF	= ${DIR_SRC}main.c ${DIR_SRC}ft_color.c ${DIR_SRC}ft_display_grid.c \
+S_FDF	= ${DIR_SRC}main.c ${DIR_SRC}ft_color.c ${DIR_SRC}ft_display_map.c \
 		${DIR_SRC}ft_parsing.c ${DIR_SRC}ft_place_line.c \
 		${DIR_SRC}ft_print_line.c ${DIR_SRC}ft_struct_init.c
 
-O_LIB	= ${S_LIB:.c=.o}
-O_GNL	= ${S_GNL:.c=.o}
-O_FDF	= ${S_FDF:.c=.o}
-
-OBJS	= ${O_LIB} ${O_GNL} ${O_FDF}
+OBJS	= ${S_LIB:.c=.o} ${S_GNL:.c=.o} ${S_FDF:.c=.o}
 
 # VARIABLES
 NAME	= fdf

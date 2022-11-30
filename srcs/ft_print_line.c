@@ -6,13 +6,13 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 14:12:02 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/29 19:28:43 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/30 15:03:44 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	ft_print_line(t_vars *window, t_grid *grid)
+void	ft_print_line(t_grid *grid)
 {
 	double	delta_x;
 	double	delta_y;
@@ -30,7 +30,7 @@ void	ft_print_line(t_vars *window, t_grid *grid)
 	while (pixels--)
 	{
 		if ((int)pixel_y * WIN_W + (int)pixel_x < WIN_W * WIN_H)
-			window->image.data[(int)pixel_y * WIN_W + (int)pixel_x] = \
+			grid->image.data[(int)pixel_y * WIN_W + (int)pixel_x] = \
 				grid->color;
 		pixel_x += delta_x;
 		pixel_y += delta_y;

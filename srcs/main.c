@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:00:59 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/30 11:14:23 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/30 15:16:47 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	main(int argc, char **argv)
 	if (argc != 2)
 		return (0);
 	fd = open(argv[1], O_RDONLY);
-	grid = ft_grid_init(fd);
-	ft_display_grid(grid);
+	grid = ft_struct_init(fd);
+	ft_create_map(grid);
+	mlx_loop(grid->mlx);
 }
