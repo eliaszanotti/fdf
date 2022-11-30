@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:39:10 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/30 10:53:30 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/11/30 11:13:38 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	ft_display_grid(t_grid *grid)
 		}
 		i++;
 	}
+
 	mlx_put_image_to_window(window->mlx, window->win, window->image.img, 0, 0);
 	mlx_loop(window->mlx);
 }
