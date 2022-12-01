@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 14:12:02 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/12/01 09:45:59 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/12/01 15:21:37 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ void	ft_print_line(t_grid *grid)
 	while (pixels--)
 	{
 		if ((int)pixel_y * WIN_W + (int)pixel_x < WIN_W * WIN_H && \
-			(int)pixel_x < WIN_W && (int)pixel_x > 0)
+				(int)pixel_x < WIN_W && (int)pixel_x > 0 && \
+				(int)pixel_y < WIN_H && (int)pixel_y > 0)
 			grid->image.data[(int)pixel_y * WIN_W + (int)pixel_x] = \
 				grid->color;
 		pixel_x += delta_x;

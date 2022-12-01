@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 11:13:58 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/12/01 09:49:31 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/12/01 15:22:07 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,11 @@ t_grid	*ft_struct_init(int fd)
 	grid->win = mlx_new_window(grid->mlx, WIN_W, WIN_H, "FDF");
 	grid->tab = ft_parsing(fd, grid);
 	grid->max = round(((WIN_W + WIN_H) / 2) / (grid->lines + grid->cols - 2));
+	grid->off_left = (WIN_W - ((grid->lines + grid->cols) * grid->max) / \
+		sqrt(2)) / 2;
+	grid->off_left += (grid->lines * grid->max / sqrt(2));
+	grid->off_top = (WIN_H - (grid->max * (grid->lines + grid->cols)) / \
+		sqrt(6)) / 2;
 	grid->altitude = 1;
-	grid->rotation = 1;
-	grid->min = round(grid->max * grid->rotation);
-	grid->left = (grid->lines - 1) * grid->max;
-	grid->top = (grid->lines + grid->cols - 2) * grid->min;
-	grid->off_left = grid->left + \
-		(WIN_W - ((grid->lines + grid->cols) * grid->max)) / 2;
-	grid->off_top = (WIN_H - grid->top) / 2;
 	return (grid);
 }
