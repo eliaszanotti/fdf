@@ -6,17 +6,23 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 14:28:36 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/12/01 15:19:39 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/12/01 15:41:05 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+
+#include <stdio.h>
 
 int	ft_key_hook(int key, t_grid *grid)
 {
 	int	move;
 
 	move = 250;
+	printf("%d\n", key);
+	if (key == 53)
+		ft_exit(grid);
 	if (key == 126)
 		grid->off_top += move;
 	if (key == 125)
@@ -25,6 +31,8 @@ int	ft_key_hook(int key, t_grid *grid)
 		grid->off_left += move;
 	if (key == 124)
 		grid->off_left -= move;
+	if (key >= 82 && key <= 85)
+		grid->altitude = -1 * (82 - key);
 	if (key == 69)
 		grid->altitude += 0.1;
 	if (key == 78 && grid->altitude > 0.1)

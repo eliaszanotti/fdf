@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:07:28 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/12/01 14:29:26 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/12/01 15:35:05 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,6 @@ void	ft_print_line(t_grid *grid);
 t_grid	*ft_struct_init(int fd);
 int		ft_key_hook(int key, t_grid *grid);
 int		ft_mouse_hook(int key, int x, int y, t_grid *grid);
+int		ft_exit(t_grid *grid);
 
 #endif

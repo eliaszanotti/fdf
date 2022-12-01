@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:39:10 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/12/01 15:21:04 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/12/01 15:33:13 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,22 @@ void	ft_update_map(t_grid *grid)
 	mlx_put_image_to_window(grid->mlx, grid->win, grid->image.img, 0, 0);
 }
 
+int	ft_exit(t_grid *grid)
+{
+	int	i;
+
+	i = 0;
+	while (i < grid->lines)
+		free(grid->tab[i++]);
+	free(grid->tab);
+	exit(0);
+	return (0);
+}
+
 void	ft_create_map(t_grid *grid)
 {
 	ft_update_map(grid);
 	mlx_key_hook(grid->win, ft_key_hook, grid);
 	mlx_mouse_hook(grid->win, ft_mouse_hook, grid);
-	//mlx_hook(grid->win, 5, 0, ft_close, grid);	
+	mlx_hook(grid->win, 17, 0, ft_exit, grid);	
 }

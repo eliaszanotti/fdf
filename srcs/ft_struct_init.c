@@ -6,11 +6,11 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 11:13:58 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/12/01 15:22:07 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/12/01 15:30:15 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <fdf.h>
+#include "fdf.h"
 
 t_grid	*ft_struct_init(int fd)
 {
