@@ -6,11 +6,23 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:39:10 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/12/01 15:54:04 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/12/01 17:10:01 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+void	ft_print_hud(t_grid *grid)
+{
+	mlx_string_put(grid->mlx, grid->win, 10, 10, 0xFFFFFF, \
+			"ZOOM     : Scroll");
+	mlx_string_put(grid->mlx, grid->win, 10, 35, 0xFFFFFF, \
+			"ALTITUDE : +/- or 0, 1, 2, 3");
+	mlx_string_put(grid->mlx, grid->win, 10, 60, 0xFFFFFF, \
+			"MOVE     : Arrows");
+	mlx_string_put(grid->mlx, grid->win, 10, 85, 0xFFFFFF, \
+			"RESET    : Space");
+}
 
 void	ft_update_map(t_grid *grid)
 {
@@ -32,6 +44,7 @@ void	ft_update_map(t_grid *grid)
 		i++;
 	}
 	mlx_put_image_to_window(grid->mlx, grid->win, grid->image.img, 0, 0);
+	ft_print_hud(grid);
 }
 
 int	ft_exit(t_grid *grid)
@@ -39,11 +52,9 @@ int	ft_exit(t_grid *grid)
 	int	i;
 
 	i = 0;
-
-	(void)grid;
-	/*while (i < grid->lines)
+	while (i < grid->lines)
 		free(grid->tab[i++]);
-	free(grid->tab);*/
+	free(grid->tab);
 	exit(0);
 	return (0);
 }

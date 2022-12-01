@@ -6,17 +6,31 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 14:28:36 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/12/01 16:45:28 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/12/01 17:06:38 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+#include <stdio.h>
+
+void	ft_grid_reset(t_grid *grid)
+{
+	grid->max = round(((WIN_W + WIN_H) / 2) / (grid->lines + grid->cols - 2));
+	grid->off_left = (WIN_W - ((grid->lines + grid->cols) * grid->max) / \
+		sqrt(2)) / 2;
+	grid->off_left += (grid->lines * grid->max / sqrt(2));
+	grid->off_top = (WIN_H - (grid->max * (grid->lines + grid->cols)) / \
+		sqrt(6)) / 2;
+	grid->altitude = 1;
+}
 
 int	ft_key_hook(int key, t_grid *grid)
 {
 	int	move;
 
 	move = 250;
+	printf("%d\n", key);
 	if (key == 53)
 		ft_exit(grid);
 	if (key == 126)
@@ -33,6 +47,8 @@ int	ft_key_hook(int key, t_grid *grid)
 		grid->altitude += 0.1;
 	if (key == 78 && grid->altitude > 0.1)
 		grid->altitude -= 0.1;
+	if (key == 49)
+		ft_grid_reset(grid);
 	mlx_destroy_image(grid->mlx, grid->image.img);
 	ft_update_map(grid);
 	return (0);
