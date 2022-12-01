@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:39:10 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/12/01 11:15:27 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/12/01 11:26:35 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 int	ft_key_hook(int key, t_grid *grid)
 {
-	printf("%d\n", key);
 	if (key == 126)
 		grid->altitude += 0.25;
 	if (key == 125 && grid->altitude >= 0.25)
@@ -33,12 +32,12 @@ int ft_mouse_hook(int key, int x, int y, t_grid *grid)
 {
 	x = 0;
 	y = 0;
-	if (key == 5)
-		grid->altitude += 0.25;
+	if (key == 5 && grid->altitude <= 10)
+		grid->altitude += 0.2;
+	if (key == 4 && grid->altitude >= 0.2)
+		grid->altitude -= 0.2;
 	mlx_destroy_image(grid->mlx, grid->image.img);
 	ft_update_map(grid);
-	(void)grid;
-	(void)key;
 	return (0);
 }
 
