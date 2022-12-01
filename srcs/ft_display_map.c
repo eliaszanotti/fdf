@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:39:10 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/30 15:52:13 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/12/01 09:51:40 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,37 +14,38 @@
 
 #include <stdio.h>
 
-int	ft_hook_key(int key, t_grid *grid)
+int	ft_key_hook(int key, t_grid *grid)
 {
 	printf("%d\n", key);
-	if (key == 126 && grid->rotation < 1)
-	{
-		grid->rotation += 0.1;
-		grid->min = grid->rotation * grid->max;
-	}
-	if (key == 125 && grid->rotation > 0)
-	{
-		grid->rotation -= 0.1;
-		grid->min = grid->rotation * grid->max;
-	}
+	if (key == 69)
+		grid->max += 1;	
+	if (key == 78)
+		grid->max -= 1;
+	if (key == 126)
+		grid->altitude += 0.2;
+	if (key == 125 && grid->altitude >= 0.2)
+		grid->altitude -= 0.2;
 
+	grid->min = round(grid->max * grid->rotation);
+	grid->max = round(((WIN_W + WIN_H) / 2) / (grid->lines + grid->cols - 2));
 
 	mlx_destroy_image(grid->mlx, grid->image.img);
 	ft_update_map(grid);
-	(void)grid;
 	return (0);
 }
 
-int mouse_hook(int key, t_grid *grid)
+/*int	ft_mouse_hook(int key, t_grid *grid)
 {
-	if (key == 3)
-		grid->altitude += 0.1;
+	printf("\t%d\n", key);
+	//if (key == 3)
+	//	grid->altitude += 0.1;
 	//mlx_destroy_image(grid->mlx, grid->image.img);
 	//ft_update_map(grid);
-	(void)grid;
-	(void)key;
+	mlx_destroy_image(grid->mlx, grid->image.img);
+	ft_update_map(grid);
+	//(void)grid;
 	return (0);
-}
+}*/
 
 void	ft_update_map(t_grid *grid)
 {
@@ -68,26 +69,9 @@ void	ft_update_map(t_grid *grid)
 	mlx_put_image_to_window(grid->mlx, grid->win, grid->image.img, 0, 0);
 }
 
-int ft_close(int key, int x, int y, t_grid *grid)
-{
-	if (key == 1)
-		grid->rotation = 1;
-	if (key == 2)
-		grid->rotation = 0;
-	mlx_destroy_image(grid->mlx, grid->image.img);
-	ft_update_map(grid);
-	printf("%d,%d\n", x, y);
-	(void)x;
-	(void)y;
-	(void)grid;
-	return (0);
-}
-
 void	ft_create_map(t_grid *grid)
 {
-
 	ft_update_map(grid);
-	//mlx_mouse_hook(grid->win, mouse_hook, grid);
-	mlx_hook(grid->win, 5, 0, ft_close, grid);	
-	mlx_key_hook(grid->win, ft_hook_key, grid);
+	//mlx_mouse_hook(grid->win, ft_mouse_hook, grid);
+	mlx_key_hook(grid->win, ft_key_hook, grid);
 }
