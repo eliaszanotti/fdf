@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:39:10 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/12/01 11:10:27 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/12/01 11:15:27 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include <stdio.h>
 
-int	ft_hook_key(int key, t_grid *grid)
+int	ft_key_hook(int key, t_grid *grid)
 {
 	printf("%d\n", key);
 	if (key == 126)
@@ -29,12 +29,14 @@ int	ft_hook_key(int key, t_grid *grid)
 	return (0);
 }
 
-int mouse_hook(int key, t_grid *grid)
+int ft_mouse_hook(int key, int x, int y, t_grid *grid)
 {
-	if (key == 3)
-		grid->altitude += 0.1;
-	//mlx_destroy_image(grid->mlx, grid->image.img);
-	//ft_update_map(grid);
+	x = 0;
+	y = 0;
+	if (key == 5)
+		grid->altitude += 0.25;
+	mlx_destroy_image(grid->mlx, grid->image.img);
+	ft_update_map(grid);
 	(void)grid;
 	(void)key;
 	return (0);
@@ -66,7 +68,7 @@ void	ft_create_map(t_grid *grid)
 {
 
 	ft_update_map(grid);
-	//mlx_mouse_hook(grid->win, mouse_hook, grid);
+	mlx_key_hook(grid->win, ft_key_hook, grid);
+	mlx_mouse_hook(grid->win, ft_mouse_hook, grid);
 	//mlx_hook(grid->win, 5, 0, ft_close, grid);	
-	mlx_key_hook(grid->win, ft_hook_key, grid);
 }
