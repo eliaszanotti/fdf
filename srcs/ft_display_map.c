@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:39:10 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/12/01 09:51:40 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/12/01 10:02:54 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,13 @@ int	ft_key_hook(int key, t_grid *grid)
 		grid->altitude += 0.2;
 	if (key == 125 && grid->altitude >= 0.2)
 		grid->altitude -= 0.2;
-
 	grid->min = round(grid->max * grid->rotation);
-	grid->max = round(((WIN_W + WIN_H) / 2) / (grid->lines + grid->cols - 2));
+	grid->left = (grid->lines - 1) * grid->max;
+	grid->top = (grid->lines + grid->cols - 2) * grid->min;
+	grid->off_left = grid->left + \
+		(WIN_W - ((grid->lines + grid->cols) * grid->max)) / 2;
+	grid->off_top = (WIN_H - grid->top) / 2;
+
 
 	mlx_destroy_image(grid->mlx, grid->image.img);
 	ft_update_map(grid);
