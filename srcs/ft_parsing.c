@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 16:00:27 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/12/01 16:02:05 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/12/01 16:45:08 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,9 @@ int	**ft_get_int_tab(t_list *first)
 	while (first)
 	{
 		int_tab[size++] = first->content;
+		free(&first->content);
 		first = first->next;
 	}
-	while (first)
-	{
-		first = first->next;
-		free(first->content);
-	}
-	free(first);
 	return (int_tab);
 }
 

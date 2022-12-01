@@ -6,21 +6,17 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 14:28:36 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/12/01 15:41:05 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/12/01 16:45:28 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-
-
-#include <stdio.h>
 
 int	ft_key_hook(int key, t_grid *grid)
 {
 	int	move;
 
 	move = 250;
-	printf("%d\n", key);
 	if (key == 53)
 		ft_exit(grid);
 	if (key == 126)
