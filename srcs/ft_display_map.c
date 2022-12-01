@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:39:10 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/12/01 15:33:13 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/12/01 15:54:04 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,11 @@ int	ft_exit(t_grid *grid)
 	int	i;
 
 	i = 0;
-	while (i < grid->lines)
+
+	(void)grid;
+	/*while (i < grid->lines)
 		free(grid->tab[i++]);
-	free(grid->tab);
+	free(grid->tab);*/
 	exit(0);
 	return (0);
 }
