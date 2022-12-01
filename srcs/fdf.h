@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:07:28 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/11/30 15:16:08 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/12/01 14:29:26 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,6 @@ typedef struct s_grid
 	int		cols;
 	int		max;
 	double	altitude;
-	double	rotation;
-	int		min;
-	int		left;
-	int		top;
 	int		off_left;
 	int		off_top;
 	int		color;
@@ -63,5 +59,7 @@ int		**ft_parsing(int fd, t_grid *grid);
 void	ft_place_line(t_grid *grid, int i, int j);
 void	ft_print_line(t_grid *grid);
 t_grid	*ft_struct_init(int fd);
+int		ft_key_hook(int key, t_grid *grid);
+int		ft_mouse_hook(int key, int x, int y, t_grid *grid);
 
 #endif
