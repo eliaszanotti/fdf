@@ -6,13 +6,11 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 14:28:36 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/12/05 08:50:41 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/12/05 08:51:20 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-
-#include <stdio.h>
 
 void	ft_grid_reset(t_grid *grid)
 {

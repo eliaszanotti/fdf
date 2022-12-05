@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:00:59 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/12/05 08:49:47 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/12/05 08:51:35 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 	if (fd < 0)
 	{
 		ft_putendl_fd("Error: C'ant open file", 1);
-	 	return (0);
+		return (0);
 	}
 	grid = ft_struct_init(fd);
 	if (!grid)
