@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 14:28:36 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/12/05 08:51:20 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/12/09 15:10:57 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_key_hook(int key, t_grid *grid)
 {
 	int	move;
 
-	move = 250;
+	move = 150;
 	if (key == 53)
 		ft_exit(grid);
 	if (key == 126)
