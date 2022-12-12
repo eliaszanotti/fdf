@@ -6,7 +6,7 @@
 /*   By: ezanotti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 13:00:59 by ezanotti          #+#    #+#             */
-/*   Updated: 2022/12/05 08:51:35 by ezanotti         ###   ########lyon.fr   */
+/*   Updated: 2022/12/12 16:47:02 by ezanotti         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ int	main(int argc, char **argv)
 		return (0);
 	ft_create_map(grid);
 	mlx_loop(grid->mlx);
+	close(fd);
 	return (0);
 }
